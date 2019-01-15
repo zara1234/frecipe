@@ -29,3 +29,7 @@ Route::post('register', 'Auth\RegisterController@register');
 
 // Home Route
 Route::get('/', 'Auth\LoginController@showLoginForm');
+
+// App Route
+Route::get('/kitchen', 'KitchenController@index')->name('kitchen.index');
+Route::get('/kitchen/fridge', 'FridgeController@index')->name('fridge.index');

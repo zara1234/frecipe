@@ -27,4 +27,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
     ];
+
+    public function fridge() {
+        return $this->hasOne(Fridge::class);
+    }
 }
