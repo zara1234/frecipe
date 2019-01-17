@@ -10781,6 +10781,98 @@ header {
   width: 30px;
 }
 
+.container--head {
+  margin-top: 38px;
+}
+
+.container--head-title {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.container--head.add .search {
+  text-align: center;
+}
+
+.container--head.add .search h4 {
+  font-style: italic;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.container .cnt {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 75px;
+}
+
+.container .cnt--item {
+  margin: 8px;
+  min-height: 150px;
+  box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.06);
+  flex-basis: calc(25% - 16px);
+  border-radius: 25px;
+  transition: box-shadow 0.4s ease, -webkit-transform 0.3s ease;
+  transition: box-shadow 0.4s ease, transform 0.3s ease;
+  transition: box-shadow 0.4s ease, transform 0.3s ease, -webkit-transform 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 22px;
+  position: relative;
+}
+
+.container .cnt--item:hover {
+  box-shadow: 1px 6px 35px rgba(0, 0, 0, 0.2);
+  -webkit-transform: translateY(-6px);
+          transform: translateY(-6px);
+}
+
+.container .cnt--item h3 {
+  font-size: 1rem;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.container .cnt--item .item {
+  margin-left: 14px;
+  margin-bottom: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  min-height: 24px;
+  padding: 2px 8px;
+  box-shadow: 1px 1px 35px rgba(0, 0, 0, 0.025);
+  border-radius: 25px;
+}
+
+.container .cnt--item div.submit {
+  display: block;
+  width: 100%;
+  margin-top: 24px;
+  text-align: center;
+}
+
+.container .cnt--item.add {
+  min-height: 75px;
+}
+
+.container .cnt--item.add input#amount {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.container .cnt--item.add .add-btn {
+  text-align: center;
+}
+
+.container .cnt--item.add .add-btn button.button1 {
+  line-height: 4px;
+}
+
+.add-items {
+  margin-top: 24px;
+  text-align: center;
+}
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
@@ -10835,5 +10927,34 @@ body {
 
 .m-b-md {
   margin-bottom: 30px;
+}
+
+.button {
+  background-color: transparent;
+  border: 2px solid #998675;
+  color: #998675;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: background-color 0.4s ease;
+  padding: 8px;
+}
+
+.button:hover {
+  border-color: #998675;
+  background-color: rgba(153, 134, 117, 0.1);
+  color: #bfba80;
+}
+
+.input {
+  width: 50%;
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  transition: border-bottom 0.4s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-bottom: 2px solid rgba(153, 134, 117, 0.66);
 }
 

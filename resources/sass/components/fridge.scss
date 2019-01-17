@@ -1,0 +1,91 @@
+.container {
+  &--head {
+    margin-top: 38px;
+    &-title {
+      font-size: 2rem;
+      font-weight: 800;
+    }
+    &-subtitle {
+
+    }
+    &.add {
+      .search {
+        text-align: center;
+        h4 {
+          font-style: italic;
+          font-weight: 600;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+  .cnt {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 75px;
+    &--item {
+      margin: 8px;
+      min-height: 150px;
+      box-shadow: 1px 1px 25px rgba(black, .06);
+      flex-basis: calc(25% - 16px);
+      -webkit-border-radius: 25px;
+      -moz-border-radius: 25px;
+      border-radius: 25px;
+      transition: box-shadow .4s ease, transform .3s ease;
+      border: 1px solid rgba(black, .2);
+      padding: 22px;
+      position: relative;
+      &:hover {
+        box-shadow: 1px 6px 35px rgba(black, .2);
+        transform: translateY(-6px);
+      }
+
+      h3 {
+        font-size: 1rem;
+        text-transform: capitalize;
+        font-weight: 600;
+      }
+      .item {
+        margin-left: 14px;
+        margin-bottom: 0;
+        width: fit-content;
+        min-height: 24px;
+        padding: 2px 8px;
+        box-shadow: 1px 1px 35px rgba(black, .025);
+        border-radius: 25px;
+        //border: 2px solid rgba(#b6b77e, .66);
+      }
+      div.submit {
+        display: block;
+        width:100%;
+        margin-top: 24px;
+        text-align: center;
+      }
+      &.add{
+        min-height: 75px;
+        input#amount {
+          margin-top: 8px;
+          margin-bottom: 8px;
+        }
+        .add-btn {
+          text-align: center;
+          button.button1 {
+            line-height: 4px;
+          }
+        }
+        .item {
+        }
+      }
+    }
+  }
+  &--fridge {
+
+  }
+  &--add {
+
+  }
+}
+.add-items {
+  margin-top: 24px;
+  text-align: center;
+}
