@@ -17,4 +17,5 @@ class KitchenController extends Controller
         $user = Auth::user();
         return view('kitchen.index', ['name' => $user->name]);
     }
+
 }

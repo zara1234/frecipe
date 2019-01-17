@@ -10617,8 +10617,223 @@ body {
   right: 0;
 }
 
+.cart h1 {
+  text-align: center;
+  color: black;
+  background-color: transparent;
+  margin-top: 30px;
+}
+
+.cart div {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 80px;
+}
+
+a {
+  background: rgba(0, 0, 0, 0);
+  border: 1px solid;
+  color: #362f2d;
+  line-height: 1.4;
+  padding: 40px 60px;
+  text-decoration: none;
+}
+
+a:hover {
+  background: white;
+  color: #e3342f;
+  text-decoration: none;
+}
+
+header {
+  text-align: center;
+}
+
+.cart div a:nth-child(1) {
+  margin-right: 20px;
+  color: #362f2d;
+}
+
+.cart div a:nth-child(1):hover {
+  background: white;
+  color: #e3342f;
+  text-decoration: none;
+  transition-duration: 1.5em ease;
+}
+
+.body-login {
+  background-image: url(/images/pic1.png?a99de2ce61b2bb686983f49fe4e29a5e);
+}
+
+.login-register {
+  width: 100vw;
+  /*height: 100vh;*/
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  flex-direction: row;
+}
+
+.login {
+  width: 35%;
+  background-color: white;
+  text-align: start;
+  padding: 40px;
+  color: black;
+}
+
+.img-logo {
+  vertical-align: middle;
+  border-style: none;
+  margin-top: 8%;
+  margin-bottom: 45px;
+}
+
+#email {
+  margin: 0;
+  width: 90%;
+  margin-bottom: 15px;
+}
+
+#password {
+  margin-bottom: 10px;
+  width: 90%;
+}
+
+.login-register p {
+  margin: 0;
+}
+
+.register1 {
+  padding: 40px;
+  width: 35%;
+  background-color: #362f2d;
+  color: white;
+  text-align: end;
+}
+
+.sub-main {
+  width: 30%;
+  margin: 22px;
+  float: left;
+}
+
+.button-two {
+  text-align: center;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+/*Button Two*/
+
+.button-two {
+  border-radius: 4px;
+  background-color: #998675;
+  border: none;
+  padding: 15px;
+  width: 150px;
+  transition: all 0.5s;
+  color: white;
+}
+
+.button-two span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button-two span:after {
+  content: "\BB";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button-two:hover span {
+  padding-right: 25px;
+}
+
+.button-two:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.test {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  width: 141px;
+  margin-bottom: 30px;
+}
+
+#button {
+  width: 30px;
+}
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+html,
+body {
+  color: #636b6f;
+  font-family: "Nunito", sans-serif;
+  font-weight: 200;
+  height: 100vh;
+  margin: 0;
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.position-ref {
+  position: relative;
+}
+
+.top-right {
+  position: absolute;
+  right: 10px;
+  top: 18px;
+}
+
+.content {
+  text-align: center;
+}
+
+.title {
+  font-size: 84px;
+}
+
+.links > a {
+  color: #636b6f;
+  padding: 0 25px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.m-b-md {
+  margin-bottom: 30px;
 }
 

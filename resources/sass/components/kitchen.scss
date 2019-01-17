@@ -1,0 +1,46 @@
+.cart h1{
+  text-align: center;
+  color: black;
+  background-color: transparent;
+  margin-top: 30px;
+}
+
+
+.cart div{
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 80px;
+
+}
+
+  a {
+    background: rgba(black, 0);
+    border: 1px solid;
+    color: #362f2d;
+    line-height: 1.4;
+    padding: 40px 60px;
+    text-decoration: none;
+
+    &:hover {
+      background: rgba($white, 1);
+      color: $red;
+      text-decoration: none;
+    }
+  }
+
+  header{
+   text-align: center;
+  }
+
+  .cart div a:nth-child(1) {
+    margin-right: 20px;
+    color: #362f2d;
+
+    &:hover {
+      background: rgba($white, 1);
+      color: $red;
+      text-decoration: none;
+      transition-duration: 1.5em ease;
+    }
+  }

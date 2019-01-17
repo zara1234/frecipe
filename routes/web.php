@@ -33,3 +33,11 @@ Route::get('/', 'Auth\LoginController@showLoginForm');
 // App Route
 Route::get('/kitchen', 'KitchenController@index')->name('kitchen.index');
 Route::get('/kitchen/fridge', 'FridgeController@index')->name('fridge.index');
+Route::get('/kitchen/fridge/add', 'FridgeController@addItem')->name('fridge.addItem');
+Route::post('/kitchen/fridge/add', 'FridgeController@postAddItem')->name('fridge.postAddItem');
+Route::post('/kitchen/fridge/change', 'FridgeController@postChangeItem')->name('fridge.postChangeItem');
+
+
+Route::get('/cookbook/', "CookbookController@index")->name("cookbook.index");
+Route::get('/cookbook/show/{id}', "CookbookController@show")->name("cookbook.show");
+Route::get('/cookbook/filter', "CookbookController@filter")->name("cookbook.filter");

@@ -10,25 +10,25 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
 </head>
-<body>
-<div class="flex-center position-ref full-height">
-    @if (Route::has('login'))
-        <div class="top-right links">
-            @auth
-                <a href="{{ url('/home') }}">Home</a>
-            @else
-                <a href="{{ route('login') }}">Login</a>
+<body class="body-login">
+{{--<div class="flex-center position-ref full-height">--}}
+    {{--@if (Route::has('login'))--}}
+        {{--<div class="top-right links">--}}
+            {{--@auth--}}
+                {{--<a href="{{ url('/home') }}">Home</a>--}}
+            {{--@else--}}
+                {{--<a href="{{ route('login') }}">Login</a>--}}
 
-                @if (Route::has('register'))
-                    <a href="{{ route('register') }}">Register</a>
-                @endif
-            @endauth
-        </div>
-    @endif
-
+                {{--@if (Route::has('register'))--}}
+                    {{--<a href="{{ route('register') }}">Register</a>--}}
+                {{--@endif--}}
+            {{--@endauth--}}
+        {{--</div>--}}
+    {{--@endif--}}
+<div class="background-img">
     <div class="content">
         <div class="title m-b-md">
-            Frecipe
+                <img class="img-logo" src="{{ asset('img/logo-white.png') }}" alt=""></a>
         </div>
 
         <div class="login-register">
@@ -36,6 +36,7 @@
                 {{ @csrf_field() }}
                 <h1>LOGIN</h1>
                 <p>E-MAIL ADRESS</p>
+
                 <input id="email" type="text" name="email" class="form__input" placeholder="e-mail adress" required>
                 <p>PASSWORD</p>
                 <input id="password" type="password" name="password" class="form__input" placeholder="password" required>
@@ -53,8 +54,8 @@
                     For instance, laravel new blog will create a directory named blog containing a fresh Laravel installation with all
                     of Laravel's dependencies already installed:</p>
 
-                <div class="form__field">
-                    <input type="submit" value="Register">
+                <div class="sub-main">
+                    <button class="button-two"><span>REGISTER</span></button>
                 </div>
             </div>
 
@@ -71,5 +72,7 @@
         {{--</div>--}}
     </div>
 </div>
+</div>
+
 </body>
 </html>

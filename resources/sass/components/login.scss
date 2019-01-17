@@ -1,0 +1,109 @@
+.body-login{
+  background-image:url("../assets/img/pic1.png");
+
+}
+
+.login-register {
+  width: 100vw;
+  /*height: 100vh;*/
+  display: flex;
+  justify-content: center;
+  background-color:transparent;
+  flex-direction: row;
+}
+
+.login {
+  width: 35%;
+  background-color: white;
+  text-align: start;
+  padding: 40px;
+  color:black;
+}
+
+.img-logo{
+  vertical-align: middle;
+  border-style: none;
+  margin-top: 8%;
+  margin-bottom: 45px;
+}
+
+#email{
+  margin: 0;
+  width: 90%;
+  margin-bottom: 15px;
+}
+
+#password{
+  margin-bottom: 10px;
+  width: 90%;
+}
+
+.login-register p{
+  margin: 0;
+}
+.register1 {
+  padding: 40px;
+  width: 35%;
+  background-color:#362f2d;
+  color: white;
+  text-align: end;
+}
+
+
+
+.sub-main {
+  width: 30%;
+  margin: 22px;
+  float: left;
+}
+
+.button-two {
+  text-align: center;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+/*Button Two*/
+
+.button-two {
+  border-radius: 4px;
+  background-color: #998675;
+  border: none;
+  padding: 15px;
+  width: 150px;
+  transition: all 0.5s;
+  color: white;
+}
+
+.button-two span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button-two span:after {
+  content: "\BB";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button-two:hover span {
+  padding-right: 25px;
+}
+
+.button-two:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+
+
