@@ -1,5 +1,8 @@
-fridge index
+@extends('master-with-nav')
 
+@section('body-class', 'fridge-index')
+
+@section('body')
 @if(count($items) > 0)
     @foreach($items as $item)
         <div class="item">{{ $item->name }}
@@ -23,3 +26,5 @@ fridge index
     <a href="{{ route('fridge.addItem') }}">Add Items</a>
 
 </div>
+
+    @endsection
