@@ -23,7 +23,7 @@
                             <input type="hidden" value="{{$item->id}}" name="item_id">
 
                             <div class="submit">
-                                <button type="submit" class="btn btn-primary button" value="Ändern">Ändern</button>
+                                <button type="submit" class="btn btn-primary button" value="Ändern">Change</button>
                             </div>
                         </form>
                     </div>

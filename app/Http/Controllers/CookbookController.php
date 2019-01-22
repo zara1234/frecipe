@@ -13,12 +13,19 @@ class CookbookController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     *
      */
+
+    
     public function index()
     {
         $recipes = Recipe::all();
 
         return view('cookbook.index', ['recipes' => $recipes]);
+
+//        $title = ::recipes();
+//        return view('cookbook.index', ['name' => $title->name]);
+
     }
 
     /**
@@ -131,4 +138,6 @@ class CookbookController extends Controller
     {
         //
     }
+
+
 }

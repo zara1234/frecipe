@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+<body >
 
 <header>
 <img class="img-logo" src="{{ asset('img/logo-black.png') }}" alt=""></a>
@@ -19,7 +19,7 @@
 
 <div class="cart">
 
-    <h1>Hi {{ $name }}, welcome to your kitchen!</h1>
+    <h1>Hi {{ $name }}, welcome to your <strong class="strong">kitchen</strong>!</h1>
 
     <div>
 

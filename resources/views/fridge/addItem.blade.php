@@ -12,7 +12,13 @@
 </head>
 <body>
 <div class="container">
+
+
     <div class="container--head add">
+        {{--<button type="button" class="btn btn-info">--}}
+            {{--<span class="glyphicon glyphicon-chevron-left"></span>--}}
+        {{--</button>--}}
+
         <h2 class="container--head-title">All Groceries</h2>
         <p class="container--head-subtitle">Select the groceries you want</p>
         <div class="search">
@@ -48,4 +54,9 @@
         crossorigin="anonymous"></script>
 <script src="{{asset('js/app.js')}}"></script>
 <script src="/js/SearchLetter.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+
+
 </body>

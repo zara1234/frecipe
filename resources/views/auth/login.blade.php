@@ -6,14 +6,14 @@
 
 <div class="background-img">
     <div class="content">
-        <div class="title m-b-md">
-                <img class="img-logo" src="{{ asset('img/logo-white.png') }}" alt=""></a>
+        <div class="title">
+            <img class="img-logo" src="{{ asset('img/logo-black.png') }}" alt=""></a>
         </div>
 
         <div class="login-register">
             <form class="login" action="{{ route('login.handle') }}" method="POST">
                 {{ @csrf_field() }}
-                <h1>LOGIN</h1>
+                <h1><strong>LOGIN</strong> TO YOUR <strong>KITCHEN</strong></h1>
                 <p>E-MAIL ADRESS</p>
 
                 <input id="email" type="text" name="email" class="form__input" placeholder="e-mail adress" required>
