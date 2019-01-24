@@ -30,6 +30,7 @@
     line-height: 1.4;
     padding: 40px 60px;
     text-decoration: none;
+    border-radius: 20px;
 
     &:hover {
       background: rgba($white, 1);
@@ -60,3 +61,58 @@
   .strong{
     color: #bfba80;
   }
+
+
+.fridge-button{
+  flex-wrap:wrap;
+}
+
+
+@media screen and (max-width: 400px) {
+
+  .header {
+    margin-top: 0px;
+  }
+
+
+  .fridge-button a:nth-child(1){
+    margin-right:0;
+    margin-bottom: 10px;
+  }
+
+  .cart div a:nth-child(1) {
+    margin-bottom: 20px;
+    color: #bfba80;
+    margin-right:0;
+  }
+
+  .cart h1{
+    text-align: center;
+    color: black;
+    background-color: transparent;
+    margin-top: 60px;
+    font-size: 20px;
+    padding: 25px;
+  }
+
+  .cart div{
+    margin-top: 30px;
+  }
+
+  .cart div a{
+    padding: 40px 80px;
+  }
+
+  }
+
+@media screen and (max-width: 415px){
+  .cart h1{
+    text-align: center;
+    color: black;
+    background-color: transparent;
+    margin-top: 60px;
+    font-size: 35px;
+    padding: 15px;
+  }
+
+}

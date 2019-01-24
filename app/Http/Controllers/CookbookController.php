@@ -16,14 +16,25 @@ class CookbookController extends Controller
      *
      */
 
-    
+    public function __construct(){
+        $this->middleware('auth:web');
+    }
+
+
     public function index()
     {
         $recipes = Recipe::all();
+        $preparation = [];
+        foreach ($recipes as $key => $value):
+                $preparation[$key] = $value["preparation"];
+        endforeach;
 
-        return view('cookbook.index', ['recipes' => $recipes]);
+        return view('cookbook.index', ['recipes' => $recipes, 'preparation' => $preparation]);
 
-//        $title = ::recipes();
+
+//        return view('cookbook.index',['name'=>$recipes->name ]);
+
+//        $title = Auth::recipes();
 //        return view('cookbook.index', ['name' => $title->name]);
 
     }
@@ -102,7 +113,7 @@ class CookbookController extends Controller
         }
 
 
-        return view('cookbook.index', ['recipes' => $recipes]);
+        return view('cookbook.filter', ['recipes' => $recipes]);
     }
 
     /**

@@ -31,7 +31,7 @@
             </div>
         </div>
     @else
-        <div>Keine Items im Kühlschrank</div>
+        <div>No Groceries in your FRIDGE - Let´s go shopping!</div>
     @endif
 
     <div class="add-items">

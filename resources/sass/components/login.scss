@@ -20,6 +20,7 @@
   background-color:transparent;
   flex-direction: row;
   margin-top: 170px;
+  flex-wrap: wrap;
 }
 
 .login {
@@ -59,6 +60,10 @@
   background-color:#362f2d;
   color: white;
   text-align: end;
+}
+
+.register1 p{
+  color:white;
 }
 
 
@@ -125,5 +130,11 @@
   font-size: 20px;
 }
 
-
+@media screen and (max-width: 400px){
+  .login-register{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
 
