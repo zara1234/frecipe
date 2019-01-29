@@ -47,6 +47,12 @@ Route::prefix("cp")->middleware("admin.auth")->name("cp.")->group(function() {
     Route::get('/recipe/create', "AdminController@recipeCreate")->name('recipeCreate');
     Route::get('/cookbook/show', "CookbookController@backend_cookbookShow")->name('cookbookAdmin');
     Route::get('/cookbook/create', "CookbookController@backend_cookbookCreate")->name('cookbookCreate');
+    Route::get('/cookbook/edit/{id}', "CookbookController@backend_cookbookEdit")->name('cookbookEdit');
+    Route::post('/cookbook/edit/{id}', "CookbookController@backend_cookbookEditPost")->name('cookbookEditPost');
+    Route::get('/cookbook/edit/{id}/change/{itemId}', "CookbookController@backend_cookbookEditChangeItem")->name('cookbookEdit.changeItem');
+    Route::get('/cookbook/edit/{id}/add', 'CookbookController@backend_AddItem')->name('cookbook.addItem');
+    Route::post('/cookbook/edit/{id}/add', 'CookbookController@backend_postAddItem')->name('cookbook.postAddItem');
+    Route::post('/cookbook/edit/{id}/change', 'CookbookController@backend_postChangeItem')->name('cookbook.postChangeItem');
     Route::delete('/cookbook/{id}/delete', ['uses' => 'CookbookController@backend_destroy', 'as' => 'cookbook.delete']);
 //    Route::get('/cookbook/createCookbook',['uses'=>'CookbookController@create','as'=>'cookbook.create']);
     Route::post('/cookbook/store',['uses'=>'CookbookController@store','as'=>'cookbook.store']);

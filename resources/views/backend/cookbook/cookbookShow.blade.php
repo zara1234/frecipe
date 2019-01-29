@@ -18,7 +18,7 @@
                 <button class="btn btn-light" type="submit">Delete</button>
             </form>
 
-            <a href="{{route("cp.cookbookCreate")}}"> Edit</a>
+            <a href="{{route("cp.cookbookEdit", ['id' => $recipe->id])}}"> Edit</a>
 
         </div>
 

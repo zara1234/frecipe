@@ -61,7 +61,7 @@ class FridgeController extends Controller
         $fridge->groceries = $groceries;
         $fridge->save();
 
-        return redirect()->route('fridge.index');
+        return redirect()->route('cookbookEdit');
     }
 
     public function postChangeItem(Request $request)

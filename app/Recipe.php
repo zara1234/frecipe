@@ -20,7 +20,41 @@ class Recipe extends Model
         return collect($ingredients);
     }
 
-    public function getPreparationAttribute($value) {
-        return json_decode($value);
+    public function setIngredientsAttribute ($value)
+    {
+        $ingredients = [];
+        foreach ($value as $ingredient) {
+            $ingredients[$ingredient->id] = $ingredient->amount;
+        }
+
+        $this->attributes['ingredients'] = json_encode($ingredients);
+    }
+
+    public function getPreparationAttribute ($value)
+    {
+        $decoded = (array)json_decode($value);
+
+        return collect($decoded);
+    }
+
+    public function getPreparationStringAttribute ()
+    {
+        $string = [];
+        foreach ($this->preparation as $step) {
+            $string[] = "+ {$step}\r";
+        }
+        return implode('', $string);
+    }
+
+    public function setPreparationAttribute (string $value)
+    {
+        $valueArray = explode("\n", $value);
+
+        $valueArray = array_map(function ($value) {
+            $value = ltrim($value, '+');
+            return trim($value);
+        }, $valueArray);
+
+        $this->attributes['preparation'] = json_encode($valueArray);
     }
 }

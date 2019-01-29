@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\cookbook;
+use App\Grocery;
 use App\Recipe;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Symfony\Contracts\Cache\ItemInterface;
 
 class CookbookController extends Controller
 {
@@ -160,8 +162,27 @@ class CookbookController extends Controller
     }
 
     public function backend_cookbookCreate(){
-        $recipes = Recipe::all();
-        return view('backend/cookbook.cookbookCreate',['recipes'=> $recipes]);
+        // $recipes = Recipe::all();
+        return view('backend/cookbook.cookbookCreate'/*,['recipes'=> $recipes]*/);
+    }
+
+    public function backend_cookbookEdit($id){
+        $recipe = Recipe::findOrFail($id);
+        return view('backend/cookbook.cookbookEdit',['recipe'=> $recipe]);
+    }
+
+    public function backend_cookbookEditPost($id, Request $request){
+        $recipe = Recipe::findOrFail($id);
+        $recipe->preparation = $request->get('preparation');
+        $recipe->name = $request->get('name');
+        $recipe->save();
+
+        return view('backend/cookbook.cookbookEdit',['recipe'=> $recipe]);
+    }
+
+    public function backend_cookbookEditChangeItem(Request $request){
+        dd($request->all());
+        return view('backend/cookbook.cookbookChangeItem',['recipe'=> $recipe, 'item' => $item]);
     }
 
     public function backend_destroy($id)
@@ -195,5 +216,60 @@ class CookbookController extends Controller
         return redirect('/cp/recipe/create')->with('success', 'Recipe has been added');
     }
 
+    public function backend_AddItem($id){
+        $grocery = Grocery::get();
+        $recipe = Recipe::findOrFail($id);
+        return view('backend.cookbook.cookbookEditIngredients', ["groceries" => $grocery, "recipe" => $recipe]);
+    }
+
+    public function backend_postAddItem($id, Request $request)
+    {
+        dump($request->all());
+        $recipe = Recipe::findOrFail($id);
+        $ingredients = $recipe->ingredients;
+        $ids_of_recipe_content = $ingredients->pluck('id');
+
+        $newGroceryId = $request->all()['item_id'];
+        $newGroceryAmount = $request->all()['amount'];
+
+        if ($ids_of_recipe_content->contains($newGroceryId)) {
+            $groceryToAddTo = $ingredients->where('id', $newGroceryId)->first();
+            $groceryToAddTo->amount = $groceryToAddTo->amount + $newGroceryAmount;
+        } else {
+            $newGrocery = Grocery::find($newGroceryId);
+            $newGrocery->amount = $newGroceryAmount;
+            $ingredients->push($newGrocery);
+        }
+
+        $recipe->ingredients = $ingredients;
+        $recipe->save();
+
+        return redirect()->route('cp.cookbookEdit', ['id'=>$recipe]);
+    }
+
+    public function backend_postChangeItem($id, Request $request)
+    {
+        dump($request->all());
+        $recipe = Recipe::findOrFail($id);
+
+        $groceries = $recipe->ingredients;
+
+        $newGroceryId = $request->all()['item_id'];
+        $newGroceryAmount = $request->all()['amount'];
+
+        if ($newGroceryAmount <= 0) {
+            $keyed = $groceries->keyBy('id');
+            $keyed->forget($newGroceryId);
+            $groceries = $keyed;
+        } else {
+            $groceryToAddTo = $groceries->where('id', $newGroceryId)->first();
+            $groceryToAddTo->amount = $newGroceryAmount;
+        }
+
+        $recipe->ingredients = $groceries;
+        $recipe->save();
+
+        return redirect()->route('cp.cookbookEdit', ['id'=>$recipe]);
+    }
 
 }

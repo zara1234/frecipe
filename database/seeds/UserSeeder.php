@@ -14,7 +14,8 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'Sarah Muehleder',
             'email' => 'sarah@frecipe.com',
-            'password' => \Illuminate\Support\Facades\Hash::make('password')
+            'password' => \Illuminate\Support\Facades\Hash::make('password'),
+            'user_group' => 1
         ]);
     }
 }
