@@ -28,7 +28,7 @@
                 <div class="card__wrapper">
 
                     <figure class="card__feature">
-                        <a href='article.html'><img src="images/pic1.png" class="card__img" alt="" width="275" height="240"></a>
+                        <a href='{{ route('cookbook.show', ["id" => $recipe->id]) }}'><img src="images/pic1.png" class="card__img" alt="" width="275" height="240"></a>
                     </figure>
 
                     <div class="card__box">

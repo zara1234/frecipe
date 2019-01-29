@@ -18,4 +18,4 @@
     @endforeach
 </ol>
 
-<a href="{{ route('cookbook.index') }}" class="back">Back To Cookbook</a>
+<a href="{{ url()->previous() }}" class="back">Back To Cookbook</a>
