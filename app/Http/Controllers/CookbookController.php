@@ -119,7 +119,7 @@ class CookbookController extends Controller
 //        dd($recipes);
 
 
-        return view('cookbook.filter', ['recipes' => $recipes]);
+        return view('cookbook.index', ['recipes' => $recipes]);
     }
 
 
