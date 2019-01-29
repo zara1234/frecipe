@@ -7,6 +7,7 @@ use App\Grocery;
 use App\Recipe;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Symfony\Contracts\Cache\ItemInterface;
 
 class CookbookController extends Controller
@@ -172,9 +173,11 @@ class CookbookController extends Controller
     }
 
     public function backend_cookbookEditPost($id, Request $request){
+        $file = Storage::disk("public")->putFile("recipe_images", $request->file("image"), "public");
         $recipe = Recipe::findOrFail($id);
         $recipe->preparation = $request->get('preparation');
         $recipe->name = $request->get('name');
+        $recipe->image = basename($file);
         $recipe->save();
 
         return view('backend/cookbook.cookbookEdit',['recipe'=> $recipe]);

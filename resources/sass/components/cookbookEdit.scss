@@ -4,3 +4,23 @@
   justify-content: flex-start;
   flex-direction: row;
 }
+.left-form {
+  .form-group {
+    text-align:center;
+  }
+  input {
+    display: block;
+    margin: 0 auto;
+  }
+  input#image {
+    visibility: hidden;
+    position: absolute;
+    opacity: 0;
+    &~~label {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+  }
+}

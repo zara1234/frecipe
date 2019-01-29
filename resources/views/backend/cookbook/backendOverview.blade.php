@@ -16,7 +16,7 @@
     <a href="{{route('cp.cookbookAdmin')}}" class="list-group-item list-group-item-action active">
         Cookbook
     </a>
-    <a href="#" class="list-group-item list-group-item-action active">
+    <a href="{{route('cp.groceryShow')}}" class="list-group-item list-group-item-action active">
         Ingredients
     </a>
     <a href="#" class="list-group-item list-group-item-action active">

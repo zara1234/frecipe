@@ -56,4 +56,11 @@ Route::prefix("cp")->middleware("admin.auth")->name("cp.")->group(function() {
     Route::delete('/cookbook/{id}/delete', ['uses' => 'CookbookController@backend_destroy', 'as' => 'cookbook.delete']);
 //    Route::get('/cookbook/createCookbook',['uses'=>'CookbookController@create','as'=>'cookbook.create']);
     Route::post('/cookbook/store',['uses'=>'CookbookController@store','as'=>'cookbook.store']);
+    Route::get('/grocery/show', "GroceryController@backend_groceryShow")->name('groceryShow');
+    Route::get('/grocery/create', "GroceryController@backend_groceryCreate")->name('groceryCreate');
+    Route::post('/grocery/store',['uses'=>'GroceryController@store','as'=>'grocery.store']);
+    Route::get('/grocery/edit/{id}', "GroceryController@backend_groceryEdit")->name('groceryEdit');
+    Route::post('/grocery/edit/{id}', "GroceryController@backend_groceryEditPost")->name('groceryEditPost');
+
+
 });

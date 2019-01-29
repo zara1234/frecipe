@@ -7,11 +7,13 @@
 
 .nav{
 
-  padding: 30px;
+  padding: 10px;
   width: 100vw;
   background-color: white;
   position: fixed;
   z-index: 500;
+  top:0px;
+  height:54px;
   /* display: flex; */
   justify-content: flex-end;
   /* flex-direction: row; */
@@ -22,6 +24,10 @@
     flex-direction: row;
     list-style-type: none;
     width: 100%;
+    padding: 8px;
+    align-items: center;
+    height: 100%;
+    margin-bottom: 0;
   }
 
 }
@@ -219,9 +225,10 @@ li{
 
 .card {
   display: inline-block;
-  margin-top: calc( ( 100vh - 650px ) / 2 );
+  //margin-top: calc( ( 100vh - 650px ) / 2 );
   margin-right: 15px;
   margin-left: 15px;
+  margin-bottom: 30px;
   top: 50%;
 }
 

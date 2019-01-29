@@ -1,6 +1,6 @@
 import TweenMax from "../gsap_minified/TweenMax.min"
 
-class SearchLetter {
+class Search {
     constructor(input, item_cnt, items) {
         this.input = input
         this.searched = []
@@ -42,4 +42,4 @@ class SearchLetter {
     }
 }
 
-export default SearchLetter
+export default Search

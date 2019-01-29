@@ -20,27 +20,18 @@
                     </ul>
                 </div><br />
             @endif
-            <form method="post" action="{{ route('cp.cookbookCreate') }}" class="left-form">
+            <form method="post" action="{{ route('cp.groceryCreate') }}" class="left-form">
 
                 <div class="form-group">
                     @csrf
-                    <label for="name">Title</label>
+                    <label for="name">Grocery Name</label>
                     <input type="text" class="input" name="share_name"/>
                 </div>
                 <div class="form-group">
-                    <label for="price">Ingredients:</label>
-                    <input class="input" type="text" id="search" placeholder="Search..">
+                    <label for="price">Unit</label>
+                    <input class="input" type="text" id="search" placeholder="Unit">
                 </div>
-                <div class="form-group">
-                    <label for="quantity">Preparation:</label>
-                    <input type="text" class="form-control" name="share_qty"/>
-                </div>
-                <div class="upload">
-                    <div class="image-preview"><img src="" width="150" alt=""></div>
-                    <input type="text" placeholder="Image Title" name="image_title">
-                    <input type="file" name="image" id="image">
-                    <label class="button" for="image">Upload Recipe Image</label>
-                </div>
+
                 <button type="submit" class="btn btn-primary">Add</button>
             </form>
         </div>

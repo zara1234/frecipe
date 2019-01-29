@@ -88,7 +88,7 @@
 
 /***/ "./resources/js/Classes/SearchLetter.js":
 /*!**********************************************!*\
-  !*** ./resources/js/Classes/SearchLetter.js ***!
+  !*** ./resources/js/Classes/Search.js ***!
   \**********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -155,12 +155,12 @@ function () {
 
 /***/ 1:
 /*!****************************************************!*\
-  !*** multi ./resources/js/Classes/SearchLetter.js ***!
+  !*** multi ./resources/js/Classes/Search.js ***!
   \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/sarahmuhleder/Desktop/frecip2/resources/js/Classes/SearchLetter.js */"./resources/js/Classes/SearchLetter.js");
+module.exports = __webpack_require__(/*! /Users/sarahmuhleder/Desktop/frecip2/resources/js/Classes/Search.js */"./resources/js/Classes/Search.js");
 
 
 /***/ })

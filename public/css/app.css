@@ -10978,11 +10978,13 @@ main {
 /* Block */
 
 .nav {
-  padding: 30px;
+  padding: 10px;
   width: 100vw;
   background-color: white;
   position: fixed;
   z-index: 500;
+  top: 0px;
+  height: 54px;
   /* display: flex; */
   justify-content: flex-end;
   /* flex-direction: row; */
@@ -10995,6 +10997,10 @@ main {
   flex-direction: row;
   list-style-type: none;
   width: 100%;
+  padding: 8px;
+  align-items: center;
+  height: 100%;
+  margin-bottom: 0;
 }
 
 .logout {
@@ -11174,9 +11180,9 @@ li {
 
 .card {
   display: inline-block;
-  margin-top: calc( ( 100vh - 650px ) / 2 );
   margin-right: 15px;
   margin-left: 15px;
+  margin-bottom: 30px;
   top: 50%;
 }
 
@@ -11335,6 +11341,28 @@ mark {
   flex-direction: row;
 }
 
+.left-form .form-group {
+  text-align: center;
+}
+
+.left-form input {
+  display: block;
+  margin: 0 auto;
+}
+
+.left-form input#image {
+  visibility: hidden;
+  position: absolute;
+  opacity: 0;
+}
+
+.left-form input#image ~ ~ label {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
@@ -11421,6 +11449,6 @@ body {
 }
 
 body:not(.body-login) main {
-  padding-top: 100px;
+  margin-top: 100px;
 }
 

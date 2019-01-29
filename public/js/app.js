@@ -131,10 +131,10 @@ module.exports = g;
 
 /***/ }),
 
-/***/ "./resources/js/Classes/SearchLetter.js":
-/*!**********************************************!*\
-  !*** ./resources/js/Classes/SearchLetter.js ***!
-  \**********************************************/
+/***/ "./resources/js/Classes/Search.js":
+/*!****************************************!*\
+  !*** ./resources/js/Classes/Search.js ***!
+  \****************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -150,11 +150,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
 
-var SearchLetter =
+var Search =
 /*#__PURE__*/
 function () {
-  function SearchLetter(input, item_cnt, items) {
-    _classCallCheck(this, SearchLetter);
+  function Search(input, item_cnt, items) {
+    _classCallCheck(this, Search);
 
     this.input = input;
     this.searched = [];
@@ -162,7 +162,7 @@ function () {
     this.items = items;
   }
 
-  _createClass(SearchLetter, [{
+  _createClass(Search, [{
     key: "search",
     value: function search(e) {
       var _this = this;
@@ -204,10 +204,10 @@ function () {
     }
   }]);
 
-  return SearchLetter;
+  return Search;
 }();
 
-/* harmony default export */ __webpack_exports__["default"] = (SearchLetter);
+/* harmony default export */ __webpack_exports__["default"] = (Search);
 
 /***/ }),
 
@@ -220,7 +220,7 @@ function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Classes_SearchLetter_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Classes/SearchLetter.js */ "./resources/js/Classes/SearchLetter.js");
+/* harmony import */ var _Classes_Search_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Classes/Search.js */ "./resources/js/Classes/Search.js");
 console.log("Go! :D"); //
 // $('.form1').hide();
 //   $(".button1").on('click',function(){
@@ -231,7 +231,7 @@ console.log("Go! :D"); //
 var input = document.querySelector("input#search");
 var item_cnt = document.querySelector(".cnt");
 var items = Array.from(document.querySelectorAll(".cnt--item"));
-var searchLetter = new _Classes_SearchLetter_js__WEBPACK_IMPORTED_MODULE_0__["default"](input, item_cnt, items);
+var searchLetter = new _Classes_Search_js__WEBPACK_IMPORTED_MODULE_0__["default"](input, item_cnt, items);
 input.addEventListener("keyup", function (e) {
   searchLetter.search(e);
 });

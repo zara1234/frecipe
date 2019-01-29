@@ -21,8 +21,7 @@
                     </ul>
                 </div><br />
             @endif
-            <form method="post" action="{{ route('cp.cookbookEditPost', ['id' => $recipe->id]) }}">
-
+            <form method="post" action="{{ route('cp.cookbookEditPost', ['id' => $recipe->id]) }}" class="left-form" enctype="multipart/form-data">
                 <div class="form-group">
                     @csrf
                     <label for="name">Title</label>
@@ -31,6 +30,12 @@
                 <div class="form-group">
                     <label for="quantity">Preparation:</label>
                     <textarea type="text" class="form-control" name="preparation">{{ $recipe->preparationString }}</textarea>
+                </div>
+                <div class="upload">
+                    <div class="image-preview"><img src="/storage/recipe_images/{{ $recipe->image }}" width="150" alt=""></div>
+                    <input type="text" placeholder="Image Title" name="image_title">
+                    <input type="file" name="image" id="image">
+                    <label class="button" for="image">Upload Recipe Image</label>
                 </div>
                 <button type="submit" class="btn btn-primary">Add</button>
             </form>
@@ -65,5 +70,6 @@
     </div>
 
     </div>
+    <script src="/js/imagePreview.js"></script>
 
 @endsection
