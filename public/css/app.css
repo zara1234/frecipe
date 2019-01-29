@@ -10973,15 +10973,20 @@ header {
 
 /* Block */
 
-.linkto {
+.nav {
   padding: 30px;
   width: 100vw;
   background-color: white;
   position: fixed;
   z-index: 500;
+}
+
+.nav--list {
   display: flex;
   justify-content: flex-start;
+  padding-left: 0;
   flex-direction: row;
+  list-style-type: none;
 }
 
 .fridge-button a:nth-child(1) {
@@ -11296,6 +11301,13 @@ mark {
   }
 }
 
+.cookbook-show {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  width: 100%;
+}
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
@@ -11379,5 +11391,9 @@ body {
 .input:focus {
   outline: none;
   border-bottom: 2px solid rgba(153, 134, 117, 0.66);
+}
+
+main {
+  padding-top: 100px;
 }
 

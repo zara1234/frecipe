@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Fridge;
 use App\Grocery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,32 +14,37 @@ class FridgeController extends Controller
         $this->middleware('auth:web');
     }
 
-    public function index ()
+    public function index()
     {
         $user = Auth::user();
         $fridge = $user->fridge;
 
-        if (is_null($fridge) || $fridge->groceries->isEmpty()) {
-            return $this->addItem();
-        }
 
+
+        if (is_null($fridge) || $fridge->groceries->isEmpty()) {
+            return view('fridge.index', ['items' => []]);
+
+        }
         $grocery = Grocery::get();
         return view('fridge.index', ['items' => $fridge->groceries, "groceries" => $grocery]);
     }
 
-    public function addItem(){
+    public function addItem()
+    {
         $grocery = Grocery::get();
-        return view('fridge.addItem', [ "groceries" => $grocery]);
+        return view('fridge.addItem', ["groceries" => $grocery]);
     }
 
-    public function postAddItem (Request $request)
+    public function postAddItem(Request $request)
     {
         $user = Auth::user();
         $fridge = $user->fridge;
+        $groceries = null;
+        $ids_of_frige_content = null;
 
         $groceries = $fridge->groceries;
-
         $ids_of_frige_content = $groceries->pluck('id');
+
 
         $newGroceryId = $request->all()['item_id'];
         $newGroceryAmount = $request->all()['amount'];
@@ -58,7 +64,7 @@ class FridgeController extends Controller
         return redirect()->route('fridge.index');
     }
 
-    public function postChangeItem (Request $request)
+    public function postChangeItem(Request $request)
     {
         $user = Auth::user();
         $fridge = $user->fridge;

@@ -7,6 +7,7 @@ use Illuminate\Support\Collection;
 
 class Fridge extends Model
 {
+    protected $fillable = ["user_id", "groceries"];
     public function groceries ()
     {
         return $this->hasMany(Grocery::class);

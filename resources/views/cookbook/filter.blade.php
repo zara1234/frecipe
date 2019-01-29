@@ -9,20 +9,8 @@
 {{--<li><a href='contact.html'>Contact</a></li>--}}
 {{--</ul>--}}
 {{--</nav>--}}
+@section("body")
 <section class="background-img">
-
-
-
-    <div class="linkto">
-
-        <h2>Cookbook</h2>
-
-        <a class="recipe-a" href="{{ route('kitchen.index') }}" class="possible-only">HOME</a>
-        <p class="divider">|</p>
-        <a class="recipe-b" href="{{ route('fridge.index') }}" class="possible-only">FRIDGE</a>
-        <p class="divider">|</p>
-        <a class="recipe-b" href="{{ route('cookbook.filter') }}" class="possible-only">RECIPES I HAVE GORCERIES FOR</a>
-    </div>
 
 
     <div class="boxx">
@@ -75,3 +63,4 @@
     </div>
 
 </section>
+    @endsection

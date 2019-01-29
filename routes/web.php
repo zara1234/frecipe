@@ -41,3 +41,12 @@ Route::post('/kitchen/fridge/change', 'FridgeController@postChangeItem')->name('
 Route::get('/cookbook/', "CookbookController@index")->name("cookbook.index");
 Route::get('/cookbook/show/{id}', "CookbookController@show")->name("cookbook.show");
 Route::get('/cookbook/filter', "CookbookController@filter")->name("cookbook.filter");
+
+
+Route::prefix("cp")->middleware("admin.auth")->name("cp.")->group(function() {
+    Route::get('/recipe/create', "AdminController@recipeCreate")->name('recipeCreate');
+    Route::get('/cookbook/show', "AdminController@cookbookShow")->name('cookbookAdmin');
+    Route::get('/cookbook/create', "AdminController@cookbookCreate")->name('cookbookCreate');
+    Route::delete('/cookbook/{id}/delete', ['uses' => 'AdminController@destroy', 'as' => 'cookbook.delete']);
+
+});

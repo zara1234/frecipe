@@ -1,10 +1,10 @@
-@extends('master-with-nav')
+@extends('master')
 
 @section('body-class', 'fridge-index')
 
 @section('body')
+    <div class="container container--fridge">
     @if(count($items) > 0)
-        <div class="container container--fridge">
 
             <div class="container--head">
                 <h2 class="container--head-title">Your Fridge</h2>
@@ -29,10 +29,10 @@
                     </div>
                 @endforeach
             </div>
-        </div>
     @else
         <div>No Groceries in your FRIDGE - Let´s go shopping!</div>
     @endif
+    </div>
 
     <div class="add-items">
         <a class="button" href="{{ route('fridge.addItem') }}">Add Items</a>

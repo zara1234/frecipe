@@ -5,15 +5,19 @@
 /* Block */
 
 
-.linkto{
+.nav{
   padding: 30px;
   width: 100vw;
   background-color: white;
   position: fixed;
   z-index: 500;
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: row;
+  &--list {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 0;
+    flex-direction: row;
+    list-style-type: none;
+  }
 
 }
 //

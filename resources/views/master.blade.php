@@ -11,6 +11,11 @@
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
 </head>
 <body class="@yield('body-class')">
-@yield('body')
+@if(Auth::check())
+@include("partials.nav")
+@endif
+<main>
+    @yield('body')
+</main>
 </body>
 </html>

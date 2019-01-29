@@ -17,6 +17,7 @@
 @import "components/addItem";
 @import "components/fridge";
 @import "components/cookbook";
+@import "components/cookbookShow";
 
 .navbar-laravel {
   background-color: #fff;
@@ -102,4 +103,8 @@ body {
     outline: none;
     border-bottom: 2px solid rgba(#998675, .66);
   }
+}
+
+main {
+padding-top: 100px;
 }

@@ -81,6 +81,7 @@ class CookbookController extends Controller
      */
     public function filter(Request $request)
     {
+
         $user = Auth::user();
         $fridge = $user->fridge;
         $groceries = $fridge->groceries->keyBy('id');
@@ -100,6 +101,7 @@ class CookbookController extends Controller
             }
         }
 
+
         // haben wir auch genug zutaten für die verbliebenen rezepte?
         foreach ($recipes as $id => $recipe) {
             foreach($recipe->ingredients as $ingredient) {
@@ -111,10 +113,13 @@ class CookbookController extends Controller
                 }
             }
         }
+//        dd($recipes);
 
 
         return view('cookbook.filter', ['recipes' => $recipes]);
     }
+
+
 
     /**
      * Show the form for editing the specified resource.

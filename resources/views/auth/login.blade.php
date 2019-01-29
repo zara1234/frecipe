@@ -34,7 +34,7 @@
                     of Laravel's dependencies already installed:</p>
 
                 <div class="sub-main">
-                    <button class="button-two"><span>REGISTER</span></button>
+                    <a href="{{ route("register") }}" class="button-two"><span>REGISTER</span></a>
                 </div>
             </div>
 
