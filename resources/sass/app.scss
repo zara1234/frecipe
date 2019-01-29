@@ -105,6 +105,6 @@ body {
   }
 }
 
-main {
+body:not(.body-login) main {
 padding-top: 100px;
 }

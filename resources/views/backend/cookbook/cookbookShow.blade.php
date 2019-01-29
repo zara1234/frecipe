@@ -7,7 +7,7 @@
     <h1 class="display-4">Cookbook</h1>
 </div>
 
-
+<a href="{{route("cp.cookbookCreate")}}"> Create</a>
 @foreach ($recipes as $key => $recipe)
     <div class="cookbook-show">
 <li class="list-group-item list-group-item-light">{{$recipe->name}}</li>
@@ -17,9 +17,15 @@
                 @csrf
                 <button class="btn btn-light" type="submit">Delete</button>
             </form>
+
+            <a href="{{route("cp.cookbookCreate")}}"> Edit</a>
+
         </div>
 
     </div>
 @endforeach
+
+
+
 
 @endsection

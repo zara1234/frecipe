@@ -46,7 +46,7 @@ class CookbookController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend/cookbook.cookbookEdit');
     }
 
     /**
@@ -64,13 +64,14 @@ class CookbookController extends Controller
      * Display the specified resource.
      *
      * @param Request $request
-     * @return void
+     *      * @return \Illuminate\Http\Response
+
      */
     public function show(Request $request, $id)
     {
-        $recipe = Recipe::findOrFail($id);
+        $recipes = Recipe::findOrFail($id);
 
-        return view('cookbook.show', ['recipe' => $recipe]);
+        return view('cookbook.show', ['recipe' => $recipes]);
     }
 
     /**
@@ -127,7 +128,7 @@ class CookbookController extends Controller
      * @param  \App\cookbook  $cookbook
      * @return \Illuminate\Http\Response
      */
-    public function edit(cookbook $cookbook)
+    public function backend_edit(cookbook $cookbook)
     {
         //
     }
@@ -139,7 +140,7 @@ class CookbookController extends Controller
      * @param  \App\cookbook  $cookbook
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, cookbook $cookbook)
+    public function backend_update(Request $request, cookbook $cookbook)
     {
         //
     }
@@ -150,9 +151,48 @@ class CookbookController extends Controller
      * @param  \App\cookbook  $cookbook
      * @return \Illuminate\Http\Response
      */
-    public function destroy(cookbook $cookbook)
+
+
+    public function backend_cookbookShow(){
+
+        $recipes = Recipe::all();
+        return view('backend/cookbook.cookbookShow',['recipes'=> $recipes]);
+    }
+
+    public function backend_cookbookCreate(){
+        $recipes = Recipe::all();
+        return view('backend/cookbook.cookbookCreate',['recipes'=> $recipes]);
+    }
+
+    public function backend_destroy($id)
     {
-        //
+        $todo = Recipe::findOrFail($id);
+        Recipe::find($id)->delete();
+        return back();
+
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+
+    public function backend_store(Request $request)
+    {
+        $request->validate([
+            'title'=>'required',
+            'ingredients'=> 'required|integer',
+            'preparation' => 'required|integer'
+        ]);
+        $newrecipe = new Recipe([
+            'title' => $request->get('title'),
+            'ingredients'=> $request->get('ingredients'),
+            'preparation'=> $request->get('preparation')
+        ]);
+        $newrecipe->save();
+        return redirect('/cp/recipe/create')->with('success', 'Recipe has been added');
     }
 
 

@@ -1,16 +1,5 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Frecipe</title>
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
-    <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
-</head>
-<body>
+@extends('master')
+@section("body")
 
 <header>
     <img class="img-logo" src="{{ asset('img/logo-black.png') }}" alt=""></a>
@@ -30,4 +19,4 @@
 
 </div>
 
-</body>
+@endsection

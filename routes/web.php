@@ -45,8 +45,9 @@ Route::get('/cookbook/filter', "CookbookController@filter")->name("cookbook.filt
 
 Route::prefix("cp")->middleware("admin.auth")->name("cp.")->group(function() {
     Route::get('/recipe/create', "AdminController@recipeCreate")->name('recipeCreate');
-    Route::get('/cookbook/show', "AdminController@cookbookShow")->name('cookbookAdmin');
-    Route::get('/cookbook/create', "AdminController@cookbookCreate")->name('cookbookCreate');
-    Route::delete('/cookbook/{id}/delete', ['uses' => 'AdminController@destroy', 'as' => 'cookbook.delete']);
-
+    Route::get('/cookbook/show', "CookbookController@backend_cookbookShow")->name('cookbookAdmin');
+    Route::get('/cookbook/create', "CookbookController@backend_cookbookCreate")->name('cookbookCreate');
+    Route::delete('/cookbook/{id}/delete', ['uses' => 'CookbookController@backend_destroy', 'as' => 'cookbook.delete']);
+//    Route::get('/cookbook/createCookbook',['uses'=>'CookbookController@create','as'=>'cookbook.create']);
+    Route::post('/cookbook/store',['uses'=>'CookbookController@store','as'=>'cookbook.store']);
 });

@@ -23,16 +23,16 @@
 
 <nav class="nav">
 
-    <h2></h2>
     <ul class="nav--list">
         <li class="nav--list-item"><a class="recipe-a" href="{{ route('kitchen.index') }}" class="possible-only">HOME</a></li>
         <li class="divider">|</li>
         <li class="nav--list-item"><a class="recipe-b" href="{{ route('fridge.index') }}" class="possible-only">FRIDGE</a></li>
         <li class="divider">|</li>
-        <li class="nav--list-item"><a class="recipe-b" href="{{ route('cookbook.filter') }}" class="possible-only">RECIPES I HAVE GORCERIES FOR</a></li>
-        <li class="divider">|</li>
+        <li class="nav--list-item"><a class="recipe-b" href="{{ route('cookbook.filter') }}" class="possible-only">AVAILABLE RECIPES </a></li>
+
         @if(Auth::user()->user_group == 1)
-            <li class="nav--list-item"><a class="recipe-b" href="{{ route("cp.recipeCreate") }}" class="possible-only">Create</a></li>
+            <li class="divider">|</li>
+            <li class="nav--list-item"><a class="recipe-b" href="{{ route("cp.recipeCreate") }}" class="possible-only">BACKEND</a></li>
         @endif
     </ul>
 
@@ -40,7 +40,7 @@
         <li>
             <form action="{{ route('logout') }}" class="logout" method="post">
             @csrf
-            <button class="logout" type="submit">Logout</button>
+            <button class="btn btn-light logout" type="submit">Logout</button>
             </form>
         </li>
     </ul>

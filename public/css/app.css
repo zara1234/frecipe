@@ -10658,7 +10658,7 @@ body {
 
 header {
   text-align: center;
-  margin-top: 235px;
+  margin-top: 120px;
 }
 
 .cart div a:nth-child(1) {
@@ -10863,6 +10863,10 @@ header {
   }
 }
 
+main {
+  padding-top: 0px;
+}
+
 .test {
   display: flex;
   flex-direction: column;
@@ -10979,14 +10983,22 @@ header {
   background-color: white;
   position: fixed;
   z-index: 500;
+  /* display: flex; */
+  justify-content: flex-end;
+  /* flex-direction: row; */
 }
 
 .nav--list {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   padding-left: 0;
   flex-direction: row;
   list-style-type: none;
+  width: 100%;
+}
+
+.logout {
+  margin-top: -22px;
 }
 
 .fridge-button a:nth-child(1) {
@@ -11006,6 +11018,10 @@ header {
   text-align: center;
   margin-left: 80px;
   font-weight: 500;
+}
+
+li {
+  list-style-type: none;
 }
 
 .divider {
@@ -11301,6 +11317,10 @@ mark {
   }
 }
 
+.logout {
+  float: right;
+}
+
 .cookbook-show {
   display: flex;
   justify-content: flex-start;
@@ -11393,7 +11413,7 @@ body {
   border-bottom: 2px solid rgba(153, 134, 117, 0.66);
 }
 
-main {
+body:not(.body-login) main {
   padding-top: 100px;
 }
 
