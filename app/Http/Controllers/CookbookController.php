@@ -216,12 +216,14 @@ class CookbookController extends Controller
     }
 
     public function backend_cookbookEditPost($id, Request $request){
-//        dd($request->all());
-        $file = Storage::disk("public")->putFile("recipe_images", $request->file("image"), "public");
         $recipe = Recipe::findOrFail($id);
+        if($recipe->image !== "" && $request->file("image") !== null) {
+            $file = Storage::disk("public")->putFile("recipe_images/", $request->file("image"), "public");
+            $filename = basename($file);
+            $recipe->image = $filename;
+        }
         $recipe->preparation = $request->get('preparation');
         $recipe->name = $request->get('name');
-        $recipe->image = basename($file);
         $recipe->save();
 
         return view('backend/cookbook.cookbookEdit',['recipe'=> $recipe]);

@@ -37,6 +37,10 @@
             </div>
     @else
         <div>No Groceries in your FRIDGE - Let´s go shopping!</div>
+            <div class="add-items">
+                <a class="button" href="{{ route('fridge.addItem') }}">Add Items</a>
+            </div>
+
     @endif
     </div>
 

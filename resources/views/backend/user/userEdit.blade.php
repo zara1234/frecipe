@@ -22,12 +22,12 @@
 
                 <div class="form-group">
                     <label for="unit">Email</label>
-                    <input type="text" class="input" name="unit" value="{{ $users->email }}"/>
+                    <input type="text" class="input" name="email" value="{{ $users->email }}"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="unit">Unit</label>
-                    <input type="text" class="input" name="unit" value="{{ $users->user_group }}"/>
+                    <label for="unit">User Group</label>
+                    <input type="text" class="input" name="user_group" value="{{ $users->user_group }}"/>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Add</button>
