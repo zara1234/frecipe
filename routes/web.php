@@ -67,5 +67,7 @@ Route::prefix("cp")->middleware("admin.auth")->name("cp.")->group(function() {
     Route::post('/grocery/edit/{id}', "GroceryController@backend_groceryEditPost")->name('groceryEditPost');
 
     Route::get('/user/show', "UserController@backend_userShow")->name('userShow');
+    Route::get('/user/edit/{id}', "UserController@backend_userEdit")->name('userEdit');
+    Route::post('/user/edit/{id}', "UserController@backend_userEditPost")->name('userEditPost');
     Route::delete('/user/{id}/delete', ['uses' => 'UserController@backend_userDestroy', 'as' => 'user.delete']);
 });

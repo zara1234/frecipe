@@ -14,10 +14,10 @@
     @foreach ($users as $key => $user)
         <div class="cookbook-show">
             <ul class="list-group">
-            <li class=" list-group-item-light recipe-name"><strong>USER-ID:</strong> {{$user->id}}</li>
+            <li class=" list-group-item-light recipe-name"><strong>USER-ID: </strong> {{$user->id}}</li>
             <li class=" list-group-item-light recipe-name"><strong>USER NAME: </strong>{{$user->name}}</li>
-            <li class=" list-group-item-light recipe-name"><strong>E-MAIL</strong>{{$user->email}}</li>
-            <li class=" list-group-item-light recipe-name"><strong>USER-GROUP</strong>{{$user->user_group}}</li>
+            <li class=" list-group-item-light recipe-name"><strong>E-MAIL: </strong>{{$user->email}}</li>
+            <li class=" list-group-item-light recipe-name"><strong>USER-GROUP: </strong>{{$user->user_group}}</li>
             </ul>
 
             <div class="btn-group">
@@ -27,7 +27,7 @@
                     <button class="recipe-btnn" type="submit">Delete</button>
                 </form>
 
-                {{--<a href="{{route("cp.cookbookEdit", ['id' => $recipe->id])}}"class="recipe-btn-edit"> Edit</a>--}}
+                <a href="{{route("cp.userEdit", ['id' => $user->id])}}" class="recipe-btn-edit"> Edit</a>
 
             </div>
 
