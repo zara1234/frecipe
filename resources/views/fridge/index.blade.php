@@ -3,12 +3,18 @@
 @section('body-class', 'fridge-index')
 
 @section('body')
+
     <div class="container container--fridge">
     @if(count($items) > 0)
 
             <div class="container--head">
                 <h2 class="container--head-title">Your Fridge</h2>
-                <p class="container--head-subtitle">Manage your fridge items here.</p>
+                <p class="container--head-subtitle">Manage your fridge-items here.</p>
+                {{--<a href="{{ route('cookbook.filter') }}" class="possible-only">Recipes I have Groceries for</a>--}}
+            </div>
+
+            <div class="add-items">
+                <a class="button" href="{{ route('fridge.addItem') }}">Add Items</a>
             </div>
             <div class="cnt">
                 @foreach($items as $item)
@@ -34,8 +40,6 @@
     @endif
     </div>
 
-    <div class="add-items">
-        <a class="button" href="{{ route('fridge.addItem') }}">Add Items</a>
-    </div>
+    
 
 @endsection

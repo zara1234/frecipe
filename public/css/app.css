@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Satisfy);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Satisfy);@import url(https://fonts.googleapis.com/css?family=Dosis);@charset "UTF-8";
 
 /*!
  * Bootstrap v4.2.1 (https://getbootstrap.com/)
@@ -10625,7 +10625,6 @@ body {
   text-align: center;
   color: black;
   background-color: transparent;
-  margin-top: 60px;
 }
 
 .cart div {
@@ -10659,19 +10658,6 @@ body {
 header {
   text-align: center;
   margin-top: 120px;
-}
-
-.cart div a:nth-child(1) {
-  margin-right: 20px;
-  color: #bfba80;
-}
-
-.cart div a:nth-child(1):hover {
-  background: white;
-  color: black;
-  text-decoration: none;
-  transition-duration: 1.5em ease;
-  font-size: 15px;
 }
 
 .strong {
@@ -10727,13 +10713,29 @@ header {
   }
 }
 
+.container--head a {
+  text-transform: uppercase;
+  color: #bfba80;
+  font-weight: 600;
+  font-family: "Dosis";
+  border: 1px solid #bfba80;
+  border-radius: 25px;
+  padding: 8px 23px;
+  margin-left: -11px;
+}
+
+.container--head a:hover {
+  color: #a09c6b;
+  border: 1px solid #a09c6b;
+  text-decoration: none;
+}
+
 .body-login {
   background-image: url(/images/pic2.png?85ea9308b5d44b7ec70641347fe016c5);
 }
 
 .title {
   background-color: white;
-  /* height: 2%; */
   margin: -1px;
   width: 100%;
   height: 134px;
@@ -10742,7 +10744,6 @@ header {
 
 .login-register {
   width: 100vw;
-  /*height: 100vh;*/
   display: flex;
   justify-content: center;
   background-color: transparent;
@@ -10752,30 +10753,35 @@ header {
 }
 
 .login {
-  width: 35%;
+  width: 420px;
   background-color: white;
   text-align: start;
   padding: 40px;
   color: black;
 }
 
+.login h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
 .img-logo {
   vertical-align: middle;
   border-style: none;
-  margin-top: 8%;
+  margin-top: 2%;
   margin-bottom: 45px;
-  margin: -89px;
 }
 
-#email {
-  margin: 0;
-  width: 90%;
-  margin-bottom: 15px;
-}
-
+#email,
 #password {
-  margin-bottom: 10px;
-  width: 90%;
+  margin: 0;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid #c0bc7e;
 }
 
 .login-register p {
@@ -10784,10 +10790,16 @@ header {
 
 .register1 {
   padding: 40px;
-  width: 35%;
+  width: 410px;
   background-color: #362f2d;
   color: white;
   text-align: end;
+}
+
+.register1 h1 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 20px;
 }
 
 .register1 p {
@@ -10807,7 +10819,7 @@ header {
   margin: 0;
   padding: 0;
   float: right;
-  margin-left: 54px;
+  margin-right: -28px;
 }
 
 /*Button Two*/
@@ -10851,20 +10863,102 @@ header {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
-.login h1 {
-  font-size: 20px;
-}
-
 @media screen and (max-width: 400px) {
   .login-register {
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    margin-top: 20px;
+    border-radius: 25px;
+    padding: 10px;
+  }
+
+  .img-logo {
+    margin-top: -6%;
+    width: 30%;
+  }
+
+  .login h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .login {
+    width: 320px;
+    padding: 30px;
+    margin-bottom: 8px;
+  }
+
+  .button-two {
+    text-align: center;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px;
+    margin-right: -102px;
+  }
+
+  .register1 h1 {
+    margin-bottom: 20px;
+  }
+
+  #email,
+  #password {
+    margin: 0;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid #c0bc7e;
+  }
+
+  .title {
+    height: 75px;
   }
 }
 
-main {
-  padding-top: 0px;
+@media screen and (max-width: 500px) {
+  .login-register {
+    margin-top: 10px;
+    border-radius: 25px;
+    padding: 20px;
+  }
+
+  .login,
+  .register1 {
+    width: 480px;
+  }
+
+  .title {
+    height: 102px;
+  }
+
+  .img-logo {
+    margin-top: 0%;
+    width: 35%;
+  }
+
+  .button-two {
+    margin-right: -116px;
+  }
+
+  #email,
+  #password {
+    margin: 0;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid #c0bc7e;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .login-register {
+    margin-top: 78px;
+  }
 }
 
 .test {
@@ -10883,6 +10977,7 @@ main {
 
 .container--head {
   margin-top: 38px;
+  text-align: center;
 }
 
 .container--head-title {
@@ -10904,6 +10999,8 @@ main {
   display: flex;
   flex-wrap: wrap;
   margin-top: 75px;
+  justify-content: center;
+  margin-bottom: 75px;
 }
 
 .container .cnt--item {
@@ -10973,38 +11070,17 @@ main {
   text-align: center;
 }
 
-/* Contact */
-
-/* Block */
-
-.nav {
-  padding: 10px;
-  width: 100vw;
-  background-color: white;
-  position: fixed;
-  z-index: 500;
-  top: 0px;
-  height: 54px;
-  /* display: flex; */
-  justify-content: flex-end;
-  /* flex-direction: row; */
+@media (min-width: 576px) {
+  .container {
+    max-width: 80%;
+  }
 }
 
-.nav--list {
-  display: flex;
-  justify-content: center;
-  padding-left: 0;
-  flex-direction: row;
-  list-style-type: none;
-  width: 100%;
-  padding: 8px;
-  align-items: center;
-  height: 100%;
-  margin-bottom: 0;
-}
-
-.logout {
-  margin-top: -22px;
+@media (max-width: 700px) {
+  .container--head {
+    margin-top: -38px;
+    text-align: center;
+  }
 }
 
 .fridge-button a:nth-child(1) {
@@ -11053,7 +11129,7 @@ li {
   text-align: center;
   display: flex;
   justify-content: center;
-  margin-top: 0;
+  margin-top: -82px;
   padding-top: 30px;
   flex-wrap: wrap;
 }
@@ -11092,8 +11168,6 @@ li {
 /* Elements */
 
 .card__wrapper {
-  padding-top: 0.1px;
-  padding-bottom: 0.1px;
   position: relative;
   background-color: #ffffff;
   color: #999999;
@@ -11323,15 +11397,290 @@ mark {
   }
 }
 
-.logout {
-  float: right;
+.search-results {
+  position: absolute;
+  right: 60px;
+  top: 256px;
+  width: 320px;
+  height: 480px;
+  overflow: scroll;
+}
+
+.search-results::-webkit-scrollbar {
+  display: none;
+}
+
+.search-results:before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  height: 50px;
+  pointer-events: none;
+}
+
+.search-results .cnt--inner {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.search-results .cnt--inner .card {
+  flex-basis: calc(50% - 8px);
+  margin: 4px;
+}
+
+.search-results .cnt--inner .card strong {
+  pointer-events: none;
+}
+
+.cookbook_create .search {
+  margin-bottom: 50px;
+}
+
+.cookbook_create .search-selected {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cookbook_create .search-selected .ingredient {
+  flex-basis: calc(50% - 8px);
+  margin: 4px;
+}
+
+.cookbook_create .search-selected .ingredient .close {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.cookbook_create .search-selected .ingredient .close:before,
+.cookbook_create .search-selected .ingredient .close:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 18px;
+  background-color: black;
+  height: 2px;
+  right: 3px;
+  top: 10px;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.cookbook_create .search-selected .ingredient .close:after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 .cookbook-show {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-direction: row;
   width: 100%;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.back {
+  text-transform: uppercase;
+  color: #bfba80;
+  font-weight: 600;
+  font-family: "Dosis";
+}
+
+.recipe-name {
+  margin-right: 20px;
+  font-weight: 600;
+}
+
+.recipe-btnn {
+  background: rgba(0, 0, 0, 0);
+  border: 1px solid;
+  color: #362f2d;
+  line-height: 1.4;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 20px;
+  margin-right: 10px;
+  margin-top: -20px;
+}
+
+.recipe-btn-edit {
+  background: rgba(0, 0, 0, 0);
+  border: 1px solid;
+  color: #bfba80;
+  line-height: 1.4;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 20px;
+  margin-right: 10px;
+  margin-top: -8px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.recipe-btn {
+  margin-right: 30px;
+}
+
+.ctn-backend {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 150px;
+}
+
+.header-backend {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+strong {
+  color: #bfba80;
+}
+
+.header-backend h1 {
+  text-align: center;
+  margin-top: 20px;
+  color: #bfba80;
+}
+
+.header-backend p {
+  font-weight: 400;
+}
+
+.backend-overview {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 50px;
+}
+
+.btn-backend {
+  background: rgba(0, 0, 0, 0);
+  border: 1px solid;
+  color: #362f2d;
+  line-height: 1.4;
+  padding: 40px 60px;
+  text-decoration: none;
+  border-radius: 20px;
+  margin-right: 10px;
+}
+
+.btn-backend:hover {
+  color: #bfba80;
+  text-decoration: none;
+}
+
+.list-group {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.list-group h1 {
+  font-weight: 600;
+}
+
+.list-group a {
+  text-transform: uppercase;
+  color: #bfba80;
+  font-weight: 600;
+  font-family: "Dosis";
+}
+
+.list-group a:nth-child(1) {
+  color: black;
+}
+
+.backend-img {
+  margin-bottom: -220px;
+  opacity: 0.5;
+}
+
+.cookbook-img {
+  width: 100%;
+  height: 300px;
+}
+
+.cookbook-img img {
+  width: 25vw;
+  height: 300px;
+  background-size: cover;
+}
+
+.recipe-show {
+  height: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.recipe-show-preparation {
+  width: 50%;
+}
+
+.recipe-show-preparation h2 {
+  margin-left: 40px;
+}
+
+.recipe-show h1 {
+  font-weight: 600;
+  font-size: 50px;
+  margin-top: 20px;
+}
+
+.recipe-show-ingredients {
+  display: flex;
+  justify-content: center;
+}
+
+.tryout-cnt {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  margin: 0 auto;
+}
+
+.zubereitung-ctn {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+ol {
+  padding: 0;
+  margin: 0;
+}
+
+.title-i {
+  margin-top: 48px;
+}
+
+.uper {
+  width: 50%;
+  margin-left: 177px;
 }
 
 .container-cookbook {
@@ -11348,6 +11697,8 @@ mark {
 .left-form input {
   display: block;
   margin: 0 auto;
+  width: 100%;
+  text-align: center;
 }
 
 .left-form input#image {
@@ -11361,6 +11712,124 @@ mark {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.nav {
+  border-bottom: 1px solid #bfba80;
+  text-align: center;
+  height: 70px;
+  line-height: 70px;
+}
+
+.menu {
+  margin: 0 30px 0 0;
+  width: 100%;
+  position: fixed;
+  background-color: white;
+  z-index: 3;
+}
+
+.menu a {
+  clear: right;
+  text-decoration: none;
+  color: grey;
+  margin: 0 10px;
+  line-height: 70px;
+  background-color: white;
+}
+
+.menu a:hover {
+  color: #bfba80;
+  transition-duration: 445ms;
+}
+
+.logout {
+  margin-top: 8px;
+  float: right;
+  margin-right: 65px;
+}
+
+span {
+  color: white;
+}
+
+.nav label {
+  margin: 0 40px 0 0;
+  font-size: 26px;
+  line-height: 70px;
+  display: none;
+  width: 20px;
+  float: right;
+}
+
+#toggle {
+  display: none;
+}
+
+@media only screen and (max-width: 800px) {
+  .nav label {
+    display: block;
+    cursor: pointer;
+    text-align: end;
+    width: 100%;
+  }
+
+  .menu {
+    text-align: center;
+    width: 100%;
+    display: none;
+    position: fixed;
+    background-color: white;
+    z-index: 3;
+  }
+
+  .menu a {
+    display: block;
+    border-bottom: 1px solid #ecead8;
+    margin: 0;
+    width: 100vw;
+    background-color: white;
+    color: black;
+  }
+
+  #toggle:checked + .menu {
+    display: block;
+    float: right;
+  }
+
+  .logout {
+    text-align: center;
+    width: 100vw;
+    background-color: #fbfbfb;
+    margin: 0;
+    font-weight: 600;
+    font-size: 15px;
+  }
+}
+
+#avocado {
+  position: relative;
+  top: -147px;
+  left: 400px;
+  visibility: hidden;
+}
+
+#apple {
+  position: relative;
+  left: 800px;
+  top: 50px;
+}
+
+#carrot {
+  position: relative;
+  left: 1060px;
+  top: -190px;
+}
+
+#berry {
+  position: relative;
+  left: 300px;
+  top: 90px;
 }
 
 .navbar-laravel {

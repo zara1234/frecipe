@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -163,53 +163,77 @@ function () {
 
 /***/ }),
 
-/***/ "./resources/js/app.js":
-/*!*****************************!*\
-  !*** ./resources/js/app.js ***!
-  \*****************************/
+/***/ "./resources/js/cookbookCreate.js":
+/*!****************************************!*\
+  !*** ./resources/js/cookbookCreate.js ***!
+  \****************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Classes_Search_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Classes/Search.js */ "./resources/js/Classes/Search.js");
-console.log("Go! :D"); //
-// $('.form1').hide();
-//   $(".button1").on('click',function(){
-//       $(this).parent().next().toggle();
-//     });
-
 
 var input = document.querySelector("input#search");
-var item_cnt = document.querySelector(".cnt");
-var items = Array.from(document.querySelectorAll(".cnt--item"));
+var item_cnt = document.querySelector(".search-results .cnt--inner");
+var items = Array.from(document.querySelectorAll(".search-results .cnt--inner .card"));
 var searchLetter = new _Classes_Search_js__WEBPACK_IMPORTED_MODULE_0__["default"](input, item_cnt, items);
 input.addEventListener("keyup", function (e) {
   searchLetter.search(e);
 });
+var ingredients = {};
+items.forEach(function (e) {
+  e.addEventListener("click", function (ev) {
+    var clone = ev.target.cloneNode(true);
+    var current = ev.target;
+    current.style.display = "none";
+    clone.className = "ingredient card";
+    clone.style.display = "unset";
+    clone.setAttribute("data-unit", current.dataset.unit);
+    var unit = document.createElement("input");
+    unit.setAttribute("type", "number");
+    unit.setAttribute("class", "unit-input");
+    unit.setAttribute("name", "unit-" + clone.dataset.reference);
+    unit.setAttribute("placeholder", clone.dataset.unit);
+    var input = document.createElement("input");
+    input.setAttribute("type", "hidden");
+    input.setAttribute("name", "id-" + clone.dataset.reference);
+    input.setAttribute("value", clone.dataset.id);
+    var close = document.createElement("div");
+    close.classList.add("close");
+    clone.append(close);
+    clone.append(unit); // clone.append(input)
+
+    ingredients[clone.dataset.id] = "";
+    document.querySelector(".search-selected").append(clone);
+    clone.addEventListener("click", function (ev) {
+      console.log(ev.target);
+    });
+    clone.querySelector(".close").addEventListener("click", function (ev) {
+      ev.target.parentElement.style.display = "block";
+      ev.target.parentElement.remove();
+      current.style.display = "block";
+    });
+  });
+});
+document.querySelector("#cookbookCreateForm").addEventListener("submit", function (e) {
+  var units = document.querySelectorAll("input.unit-input");
+  units.forEach(function (item) {
+    ingredients[item.parentElement.dataset.id] = item.value;
+    document.querySelector("input[name='ingredients']").value = JSON.stringify(ingredients);
+  });
+});
 
 /***/ }),
 
-/***/ "./resources/sass/app.scss":
-/*!*********************************!*\
-  !*** ./resources/sass/app.scss ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 0:
-/*!*************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ***!
-  \*************************************************************/
+/***/ 2:
+/*!**********************************************!*\
+  !*** multi ./resources/js/cookbookCreate.js ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/sarahmuhleder/Desktop/frecip2/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/sarahmuhleder/Desktop/frecip2/resources/sass/app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! /Users/sarahmuhleder/Desktop/frecip2/resources/js/cookbookCreate.js */"./resources/js/cookbookCreate.js");
 
 
 /***/ })

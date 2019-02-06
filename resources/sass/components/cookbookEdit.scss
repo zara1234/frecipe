@@ -1,3 +1,11 @@
+.title-i{
+  margin-top:48px;
+}
+.uper{
+  width:50%;
+  margin-left: 177px;
+}
+
 .container-cookbook{
   width: 100vw;
   display:flex;
@@ -7,10 +15,13 @@
 .left-form {
   .form-group {
     text-align:center;
+
   }
   input {
     display: block;
     margin: 0 auto;
+    width: 100%;
+    text-align: center;
   }
   input#image {
     visibility: hidden;

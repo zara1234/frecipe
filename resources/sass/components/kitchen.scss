@@ -7,7 +7,6 @@
   text-align: center;
   color: black;
   background-color: transparent;
-  margin-top: 60px;
 
 }
 
@@ -16,7 +15,6 @@
   margin: 0 auto;
   text-align: center;
   margin-top: 80px;
-
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -45,18 +43,18 @@
     margin-top: 120px;
   }
 
-  .cart div a:nth-child(1) {
-    margin-right: 20px;
-    color: #bfba80;
+  //.cart div a:nth-child(1) {
+  //  margin-right: 20px;
+  //  color: #bfba80;
+  //
+  //  &:hover {
+  //    background: rgba($white, 1);
+  //    color: black;
+  //    text-decoration: none;
+  //    transition-duration: 1.5em ease;
+  //    font-size: 15px;
+  //  }
 
-    &:hover {
-      background: rgba($white, 1);
-      color: black;
-      text-decoration: none;
-      transition-duration: 1.5em ease;
-      font-size: 15px;
-    }
-  }
 
   .strong{
     color: #bfba80;
@@ -115,4 +113,22 @@
     padding: 15px;
   }
 
+}
+
+
+.container--head a{
+  text-transform: uppercase;
+  color: #bfba80;
+  font-weight: 600;
+  font-family: "Dosis";
+  border: 1px solid #bfba80;
+  border-radius: 25px;
+  padding: 8px 23px;
+  margin-left: -11px;
+}
+
+.container--head a:hover{
+  color:#a09c6b;
+  border: 1px solid #a09c6b;
+  text-decoration:none;
 }

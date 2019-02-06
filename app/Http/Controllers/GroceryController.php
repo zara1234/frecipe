@@ -38,4 +38,26 @@ class GroceryController extends Controller
     public function backend_groceryCreate(){
         return view('backend/grocery.groceryCreate'/*,['recipes'=> $recipes]*/);
     }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+
+    public function backend_groceryStore(Request $request)
+    {
+        $request->validate([
+            'name'=> "required|string",
+            'unit'=> "required|string",
+        ]);
+
+        Grocery::create([
+            'name' => $request->get('name'),
+            'unit'=> $request->get('unit'),
+
+        ]);
+        return redirect('/cp/grocery/show')->with('success', 'Recipe has been added');
+    }
 }

@@ -5,7 +5,6 @@
 
 .title{
   background-color: white;
-  /* height: 2%; */
   margin: -1px;
   width: 100%;
   height: 134px;
@@ -14,7 +13,6 @@
 
 .login-register {
   width: 100vw;
-  /*height: 100vh;*/
   display: flex;
   justify-content: center;
   background-color:transparent;
@@ -24,31 +22,37 @@
 }
 
 .login {
-  width: 35%;
+  width: 420px;
   background-color: white;
   text-align: start;
   padding: 40px;
   color:black;
 }
 
+.login h1{
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
 .img-logo{
   vertical-align: middle;
   border-style: none;
-  margin-top: 8%;
+  margin-top: 2%;
   margin-bottom: 45px;
-  margin: -89px;
 }
 
-#email{
+
+#email, #password{
   margin: 0;
-  width: 90%;
+  width: 100%;
   margin-bottom: 15px;
+  padding: 10px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid #c0bc7e;
 }
 
-#password{
-  margin-bottom: 10px;
-  width: 90%;
-}
 
 .login-register p{
   margin: 0;
@@ -56,17 +60,21 @@
 }
 .register1 {
   padding: 40px;
-  width: 35%;
+  width: 410px;
   background-color:#362f2d;
   color: white;
   text-align: end;
 }
 
+.register1 h1{
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
 .register1 p{
   color:white;
 }
-
-
 
 .sub-main {
   width: 30%;
@@ -81,7 +89,7 @@
   margin: 0;
   padding: 0;
   float: right;
-  margin-left: 54px;
+  margin-right:-28px;
 }
 
 /*Button Two*/
@@ -126,18 +134,105 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
-.login h1{
-  font-size: 20px;
-}
+
 
 @media screen and (max-width: 400px){
   .login-register{
     display:flex;
     justify-content: center;
-    flex-direction: column;
+    margin-top:20px;
+    border-radius:25px;
+    padding:10px;
+  }
+
+  .img-logo{
+    margin-top: -6%;
+    width: 30%;
+  }
+
+  .login h1{
+    font-size:24px;
+    text-align: center;
+  }
+
+  .login{
+    width:320px;
+    padding:30px;
+    margin-bottom: 8px;
+  }
+
+  .button-two{
+    text-align: center;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px;
+    margin-right: -102px;
+  }
+
+.register1 h1{
+  margin-bottom: 20px;
+}
+
+  #email, #password{
+    margin: 0;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid #c0bc7e;
+  }
+
+  .title{
+    height: 75px;
+  }
+
+}
+
+
+@media screen and (max-width: 500px) {
+
+  .login-register{
+    margin-top:10px;
+    border-radius:25px;
+    padding:20px;
+  }
+
+  .login, .register1 {
+    width: 480px;
+  }
+
+  .title{
+    height: 102px;
+  }
+
+  .img-logo{
+    margin-top: 0%;
+    width: 35%;
+  }
+
+  .button-two{
+    margin-right: -116px;
+  }
+
+
+  #email, #password{
+    margin: 0;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid #c0bc7e;
   }
 }
 
-main{
-  padding-top:0px;
-}
+@media screen and (min-width: 500px) {
+  .login-register{
+    margin-top:78px;
+}}
+
+
+

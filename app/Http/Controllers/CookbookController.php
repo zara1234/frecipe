@@ -163,9 +163,52 @@ class CookbookController extends Controller
     }
 
     public function backend_cookbookCreate(){
-        // $recipes = Recipe::all();
-        return view('backend/cookbook.cookbookCreate'/*,['recipes'=> $recipes]*/);
+        $recipes = Recipe::all();
+        $grocery = Grocery::all();
+        return view('backend/cookbook.cookbookCreate',['recipes'=> $recipes, 'grocery' => $grocery]);
     }
+
+    public function backend_cookbookCreateStore(Request $request){
+        $request->validate([
+            'name'=> "required|string",
+            'preparation'=> "required|string",
+            'image'=> "required",
+
+        ]);
+
+
+        $file = Storage::disk("public")->putFile("recipe_images", $request->file("image"), "public");
+
+        $preparation = str_replace(array("\r", "\n"), "", $request->get("preparation"));
+        $preparation = explode("+", $preparation);
+
+//      dd($request->get("ingredients"));
+
+        $recipe = Recipe::create([
+            'name' => $request->get('name'),
+            'preparation'=> $request->get('preparation'),
+            'image'=> basename($file),
+
+        ]);
+
+        $ingredients_fin = $recipe->ingredients;
+        $ingredients = json_decode($request->ingredients, true);
+
+        foreach($ingredients as $id => $unit) {
+            $groceryToAddTo = Grocery::find($id);
+            $groceryToAddTo->amount = $unit;
+            $ingredients_fin->push($groceryToAddTo);
+
+        }
+
+        $recipe->ingredients = $ingredients_fin;
+        $recipe->save();
+
+
+        return redirect('/cp/cookbook/show')->with('success', 'Recipe has been added');
+    }
+
+
 
     public function backend_cookbookEdit($id){
         $recipe = Recipe::findOrFail($id);
@@ -173,6 +216,7 @@ class CookbookController extends Controller
     }
 
     public function backend_cookbookEditPost($id, Request $request){
+//        dd($request->all());
         $file = Storage::disk("public")->putFile("recipe_images", $request->file("image"), "public");
         $recipe = Recipe::findOrFail($id);
         $recipe->preparation = $request->get('preparation');
@@ -203,19 +247,19 @@ class CookbookController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function backend_store(Request $request)
+    public function backend_cookbookStore(Request $request)
     {
         $request->validate([
             'title'=>'required',
-            'ingredients'=> 'required|integer',
-            'preparation' => 'required|integer'
+            'ingredients'=> 'required',
+            'preparation' => 'required'
         ]);
-        $newrecipe = new Recipe([
+        Recipe::create([
             'title' => $request->get('title'),
             'ingredients'=> $request->get('ingredients'),
             'preparation'=> $request->get('preparation')
         ]);
-        $newrecipe->save();
+
         return redirect('/cp/recipe/create')->with('success', 'Recipe has been added');
     }
 
@@ -227,7 +271,6 @@ class CookbookController extends Controller
 
     public function backend_postAddItem($id, Request $request)
     {
-        dump($request->all());
         $recipe = Recipe::findOrFail($id);
         $ingredients = $recipe->ingredients;
         $ids_of_recipe_content = $ingredients->pluck('id');
@@ -268,6 +311,7 @@ class CookbookController extends Controller
             $groceryToAddTo = $groceries->where('id', $newGroceryId)->first();
             $groceryToAddTo->amount = $newGroceryAmount;
         }
+
 
         $recipe->ingredients = $groceries;
         $recipe->save();

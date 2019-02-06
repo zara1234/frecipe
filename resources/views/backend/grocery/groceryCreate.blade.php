@@ -8,7 +8,7 @@
     </style>
     <div class="card uper">
         <div class="card-header">
-            Add Share
+            MIMIMI
         </div>
         <div class="card-body">
             @if ($errors->any())
@@ -20,21 +20,22 @@
                     </ul>
                 </div><br />
             @endif
-            <form method="post" action="{{ route('cp.groceryCreate') }}" class="left-form">
+            <form method="post" action="{{ route('cp.grocery.store') }}" class="left-form">
 
                 <div class="form-group">
                     @csrf
                     <label for="name">Grocery Name</label>
-                    <input type="text" class="input" name="share_name"/>
+                    <input type="text" class="input" name="name"/>
                 </div>
                 <div class="form-group">
                     <label for="price">Unit</label>
-                    <input class="input" type="text" id="search" placeholder="Unit">
+                    <input class="input" name="unit" type="text" id="search" placeholder="Unit">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Add</button>
             </form>
         </div>
     </div>
-    <script src="/js/imagePreview.js"></script>
+
+
 @endsection

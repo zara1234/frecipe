@@ -1,4 +1,4 @@
-import TweenMax from "../gsap_minified/TweenMax.min"
+// import TimelineMax from "../gsap_minified/TweenMax.min"
 
 class Search {
     constructor(input, item_cnt, items) {
@@ -14,7 +14,7 @@ class Search {
             if (e.target.value == "") {
                 this.appendItems(this.item_cnt, this.items)
             }
-            this.animateChange(this.item_cnt)
+            // this.animateChange(this.item_cnt)
             this.searched = this.items.filter(letter => letter.dataset.reference.toLowerCase().indexOf(this.input) !== -1)
             this.item_cnt.innerHTML = ""
             this.appendItems(this.item_cnt, this.searched)

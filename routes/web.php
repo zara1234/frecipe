@@ -47,6 +47,10 @@ Route::prefix("cp")->middleware("admin.auth")->name("cp.")->group(function() {
     Route::get('/recipe/create', "AdminController@recipeCreate")->name('recipeCreate');
     Route::get('/cookbook/show', "CookbookController@backend_cookbookShow")->name('cookbookAdmin');
     Route::get('/cookbook/create', "CookbookController@backend_cookbookCreate")->name('cookbookCreate');
+
+    Route::post('/cookbook/create', "CookbookController@backend_cookbookCreateStore")->name('cookbookCreateStore');
+
+//    Route::post('/cookbook/create', "CookbookController@backend_cookbookStore")->name('cookbookStore');
     Route::get('/cookbook/edit/{id}', "CookbookController@backend_cookbookEdit")->name('cookbookEdit');
     Route::post('/cookbook/edit/{id}', "CookbookController@backend_cookbookEditPost")->name('cookbookEditPost');
     Route::get('/cookbook/edit/{id}/change/{itemId}', "CookbookController@backend_cookbookEditChangeItem")->name('cookbookEdit.changeItem');
@@ -58,9 +62,10 @@ Route::prefix("cp")->middleware("admin.auth")->name("cp.")->group(function() {
     Route::post('/cookbook/store',['uses'=>'CookbookController@store','as'=>'cookbook.store']);
     Route::get('/grocery/show', "GroceryController@backend_groceryShow")->name('groceryShow');
     Route::get('/grocery/create', "GroceryController@backend_groceryCreate")->name('groceryCreate');
-    Route::post('/grocery/store',['uses'=>'GroceryController@store','as'=>'grocery.store']);
+    Route::post('/grocery/store',['uses'=>'GroceryController@backend_groceryStore','as'=>'grocery.store']);
     Route::get('/grocery/edit/{id}', "GroceryController@backend_groceryEdit")->name('groceryEdit');
     Route::post('/grocery/edit/{id}', "GroceryController@backend_groceryEditPost")->name('groceryEditPost');
 
-
+    Route::get('/user/show', "UserController@backend_userShow")->name('userShow');
+    Route::delete('/user/{id}/delete', ['uses' => 'UserController@backend_userDestroy', 'as' => 'user.delete']);
 });

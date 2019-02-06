@@ -1,40 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Satisfy');
-
-/* Contact */
-
-/* Block */
+@import url('https://fonts.googleapis.com/css?family=Dosis');
 
 
-.nav{
 
-  padding: 10px;
-  width: 100vw;
-  background-color: white;
-  position: fixed;
-  z-index: 500;
-  top:0px;
-  height:54px;
-  /* display: flex; */
-  justify-content: flex-end;
-  /* flex-direction: row; */
-  &--list {
-    display: flex;
-    justify-content: center;
-    padding-left: 0;
-    flex-direction: row;
-    list-style-type: none;
-    width: 100%;
-    padding: 8px;
-    align-items: center;
-    height: 100%;
-    margin-bottom: 0;
-  }
 
-}
-
-.logout{
-  margin-top: -22px;
-}
 
 
 .fridge-button a:nth-child(1){
@@ -91,7 +60,7 @@ li{
   text-align: center;
   display: flex;
   justify-content: center;
-  margin-top: 0;
+  margin-top: -82px;
   padding-top: 30px;
   flex-wrap:wrap;
 }
@@ -131,27 +100,13 @@ li{
 
 /* Elements */
 .card__wrapper {
-  padding-top: .1px;
-  padding-bottom: .1px;
   position: relative;
 
   background-color: #ffffff;
   color: #999999;
   //box-shadow: 0 0 5px 0 rgba(0,0,0,.05);
 }
-.card__wrapper:after {
-  //content: '';
-  //position: absolute;
-  //z-index: -1;
-  //top: 15px;
-  //right: 15px;
-  //bottom: 0;
-  //left: 15px;
 
-  //box-shadow: 0 5px 15px 0 rgba(0,0,0,.2);
-  //transition: all .125s;
-  //transform: scale(1) translateY(0px);
-}
 .card__box {
   padding-right: 35px;
   padding-left: 35px;
@@ -225,7 +180,6 @@ li{
 
 .card {
   display: inline-block;
-  //margin-top: calc( ( 100vh - 650px ) / 2 );
   margin-right: 15px;
   margin-left: 15px;
   margin-bottom: 30px;
@@ -277,7 +231,6 @@ mark {
   margin: 0 0 50px 0;
   text-align: left;
   height: 40vh;
-  //background: url('images/pic12.jpg') no-repeat center center fixed;
   background-size: cover;
   transition: all 0.4s ease;
 }
@@ -375,6 +328,79 @@ mark {
   }
 }
 
-.logout{
-  float:right;
+
+
+.search-results {
+  position: absolute;
+  right: 60px;
+  top: 256px;
+  width: 320px;
+  height: 480px;
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &:before {
+    content:'';
+    display: block;
+    position: absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    z-index: 1;
+    height:50px;
+    pointer-events: none;
+  }
+  .cnt {
+    &--inner {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap:wrap;
+      position: relative;
+      .card {
+        flex-basis: calc(50% - 8px);
+        margin: 4px;
+        strong {
+          pointer-events: none;
+        }
+      }
+
+    }
+  }
+}
+
+.cookbook_create {
+  .search {
+    margin-bottom: 50px;
+  }
+  .search-selected {
+    display: flex;
+    flex-wrap: wrap;
+    .ingredient {
+      flex-basis: calc(50% - 8px);
+      margin:4px;
+      .close {
+        width:24px;
+        height:24px;
+        cursor:pointer;
+        &:before, &:after {
+          content:"";
+          position: absolute;
+          display: block;
+          width: 18px;
+          background-color: black;
+          height:2px;
+          right: 3px;
+          top: 10px;
+          transition: transform .3s ease;
+          transform: rotate(45deg);
+        }
+        &:after {
+          transform: rotate(-45deg);
+
+        }
+      }
+    }
+  }
 }
